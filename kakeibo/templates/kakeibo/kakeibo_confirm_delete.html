@@ -1,0 +1,34 @@
+{% extends 'kakeibo/base.html' %}
+{% block content %}
+
+ <div class="content-wrapper">
+   <div class="container-fluid">
+     <!-- Breadcrumbs-->
+     <ol class="breadcrumb">
+       <li class="breadcrumb-item">
+         <a href="{% url 'kakeibo:kakeibo_list' %}">TOP</a>
+       </li>
+       <li class="breadcrumb-item active">Family Budget App</li>
+     </ol>
+     <!-- Example DataTables Card-->
+
+     <div class="card mb-3">
+       <div class="card-header">
+         <h3>Data Deletion</h3></div>
+       </div>
+       <div class="content-wrapper">
+         <div class="container-fluid">
+           <p>{{ object }} Data Delete?</p>
+
+           <form method="post">
+             <button class="btn btn-danger">Delete</button>
+             {% csrf_token %}
+
+           </form>
+         </div>
+       </div>
+   </div>
+ </div>
+{% endblock %}
+
+
