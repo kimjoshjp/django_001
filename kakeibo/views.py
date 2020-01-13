@@ -31,6 +31,9 @@ class KakeiboUpdateView(UpdateView):
 def update_done(request):
     return render(request, 'kakeibo/update_done.html')
 
+def index(request):
+    return render(request, 'kakeibo/index.html')
+    
 class KakeiboDeleteView(DeleteView):
     model = Kakeibo
     success_url = reverse_lazy('kakeibo:delete_done')
